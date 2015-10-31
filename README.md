@@ -1,7 +1,7 @@
 # 4d-plugin-photo
 Get picture from Apple's Photo.app by its ID.
 
-Exmaple
+Example
 ---
 ```
   //1: with original 
