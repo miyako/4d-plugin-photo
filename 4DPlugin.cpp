@@ -57,6 +57,8 @@ void Photos_get_picture(sLONG_PTR *pResult, PackagePtr pParams)
 
 	if(Photos){
         SBElementArray *photos = [Photos mediaItems];
+        PhotosMediaItem *photo = (PhotosMediaItem *)[photos objectWithID:photoId];
+        /*
         PhotosMediaItem *photo = nil;
         //[photos indexOfObjectPassingTest:^BOOL(PhotosMediaItem *obj, NSUInteger idx, BOOL *stop){}] didn't work
         for(NSUInteger i = 0; i < [photos count]; ++i)
@@ -73,8 +75,9 @@ void Photos_get_picture(sLONG_PTR *pResult, PackagePtr pParams)
                 PA_YieldAbsolute();
             }
         }
-
-        if(photo)
+        */
+        //objectWithID can return invalid pointer
+        if([photo id])
         {
             BOOL usingOriginals = Param2.getIntValue();
             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
