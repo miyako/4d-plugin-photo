@@ -15,3 +15,7 @@ SET PICTURE TO PASTEBOARD($photo)
 ###Note
 
 Internally using [Cocoa Scripting Bridge](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptingBridgeConcepts/Introduction/Introduction.html).
+
+##Discussion
+
+[forums.4d.fr](http://forums.4d.fr/Post//17035664/1/)
