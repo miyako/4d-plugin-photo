@@ -111,12 +111,14 @@ void Photos_get_picture(sLONG_PTR *pResult, PackagePtr pParams)
                 PA_SetStringVariable(&args[0], &_path);
                 args[1] = PA_CreateVariable(eVK_Picture);
                 PA_ExecuteCommandByID(678, args, 2);
-                *(PA_Picture*)pResult = PA_GetPictureVariable(args[1]);
+//                *(PA_Picture*)pResult = PA_GetPictureVariable(args[1]);
+                *(PA_Picture*)pResult = PA_DuplicatePicture(PA_GetPictureVariable(args[1]), 1);
+                
                 PA_DisposeUnistring(&_path);
                 PA_ClearVariable(&args[0]);
                 //do not clear args[1]; it belongs to 4D, we did not create it
             }
-            [[NSFileManager defaultManager]removeItemAtURL:exportFileUrl error:nil];
+            [[NSFileManager defaultManager]removeItemAtURL:exportFolderUrl error:nil];
             
             [exportFilePath release];
             [cachesFolderUrl release];
