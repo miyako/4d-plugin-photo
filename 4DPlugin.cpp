@@ -107,17 +107,22 @@ void Photos_get_picture(sLONG_PTR *pResult, PackagePtr pParams)
             uint32_t len = [exportFilePath length];
             uint32_t size = (len * sizeof(PA_Unichar)) + sizeof(PA_Unichar);
             std::vector<uint8_t> buf(size);
-            if([exportFilePath getCString:(char *)&buf[0] maxLength:size encoding:NSUnicodeStringEncoding]){
-                PA_Unistring _path = PA_CreateUnistring((PA_Unichar *)&buf[0]);
+            if([exportFilePath getCString:(char *)&buf[0] maxLength:size encoding:NSUnicodeStringEncoding])
+            {
+                
                 PA_Variable args[2];
                 args[0] = PA_CreateVariable(eVK_Unistring);
-                PA_SetStringVariable(&args[0], &_path);
+                
+//                PA_Unistring _path = PA_CreateUnistring((PA_Unichar *)&buf[0]);
+//                PA_SetStringVariable(&args[0], &_path);
+                PA_SetUnistring( (&(args[0].uValue.fString)),  (PA_Unichar *)&buf[0]);
+                
                 args[1] = PA_CreateVariable(eVK_Picture);
                 PA_ExecuteCommandByID(678, args, 2);
 //                *(PA_Picture*)pResult = PA_GetPictureVariable(args[1]);
                 *(PA_Picture*)pResult = PA_DuplicatePicture(PA_GetPictureVariable(args[1]), 1);
                 
-                PA_DisposeUnistring(&_path);
+//                PA_DisposeUnistring(&_path);
                 PA_ClearVariable(&args[0]);
                 //do not clear args[1]; it belongs to 4D, we did not create it
             }
