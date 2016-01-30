@@ -1,7 +1,21 @@
 # 4d-plugin-photo
 Get picture from Apple's Photo.app by its ID.
 
-Example
+##Platform
+
+| carbon | cocoa | win32 | win64 |
+|:------:|:-----:|:---------:|:---------:|
+|🆗|🆗|🚫|🚫|
+
+Commands
+---
+
+```c
+// --- Photos
+Photos_get_picture
+```
+
+Examples
 ---
 ```
   //1: with original 
