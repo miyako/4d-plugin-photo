@@ -12,7 +12,7 @@ Commands
 
 ```c
 // --- Photos
-Photos_get_picture
+Photos get picture
 ```
 
 Examples
