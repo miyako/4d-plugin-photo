@@ -1,4 +1,4 @@
-# 4d-plugin-photo
+# 4d-plugin-photos-v1
 Get picture from Apple's Photos.app by its ID.
 
 ### Platform
@@ -15,7 +15,7 @@ Get picture from Apple's Photos.app by its ID.
 
 ```
   //1: with original 
-  //0: apparently photo.app wants to export jpg be default 
+  //0: apparently photos.app wants to export jpg be default 
 
 $photo:=Photos get picture ("pJRMAmn%R4S9qClanASXmg";Photos with original)
 
