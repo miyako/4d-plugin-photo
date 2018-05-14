@@ -1,5 +1,5 @@
 # 4d-plugin-photo
-Get picture from Apple's Photo.app by its ID.
+Get picture from Apple's Photos.app by its ID.
 
 ### Platform
 
